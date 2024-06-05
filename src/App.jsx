@@ -4,8 +4,13 @@ import { useColors } from "colorPicker/useColors";
 import ReactDOM from "react-dom/client";
 
 const App = () => {
-  const { handleChangeColor, handleSubmitSaveColor, color, colorList } =
-    useColors();
+  const {
+    handleChangeColor,
+    handleSubmitSaveColor,
+    handleClickClearColors,
+    color,
+    colorList,
+  } = useColors();
 
   return (
     <>
@@ -14,7 +19,10 @@ const App = () => {
       <div className="container mt-4">
         <div className="row">
           <div className="col-12 col-md-4">
-            <ColorList colorList={colorList} />
+            <ColorList
+              colorList={colorList}
+              handleClickClearColors={handleClickClearColors}
+            />
           </div>
           <div className="col-12 col-md-8">
             <ColorPicker
